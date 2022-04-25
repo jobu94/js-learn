@@ -1,9 +1,9 @@
 const user = {
   name: "Josef",
   rc: 940328,
-  adress: "Kachlikova",
-  cp: "885/7",
-  psc: "63500",
+  adress: "Koblizna",
+  cp: "7",
+  psc: "777777",
   day: function () {
     return this.rc % 100;
   },
