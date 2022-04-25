@@ -85,8 +85,95 @@ if (binary) {
 // console.log(arrayTest);
 
 /////////////////////////////////////////////////////////////////////////////
-let random = Array.from({ length: 20 }, () => Math.floor(Math.random() * 20));
+// let random = Array.from({ length: 20 }, () => Math.floor(Math.random() * 20));
 
-const num = 5;
-random = random.filter((item) => item !== num);
-console.log(random);
+// const num = 5;
+// random = random.filter((item) => item !== num);
+// console.log(random);
+
+/////////////////////////////////////////////////////////////////////////////
+//MAPPING
+// const rest = new Map();
+// rest.set("name", "Classico Italiano");
+// rest.set(1, "Firenze, Italy");
+// console.log(rest.set(2, "Lisabon, Portugal"));
+
+// rest
+//   .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+//   .set("open", 11)
+//   .set("close", 23)
+//   .set(true, "We are open")
+//   .set(false, "We are close");
+
+// console.log(rest.get("name"));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+
+// const time = 21;
+// console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+// console.log(rest.has("categories"));
+// rest.delete(2);
+// console.log(rest);
+
+/////////////////////////////////////////////////////////////////////////////
+// const question = new Map([
+//   ["question", "what is the best programing language in the world?"],
+//   [1, "C"],
+//   [2, "Java"],
+//   [3, "Javascript"],
+//   ["correct", 3],
+//   [true, "Correct "],
+//   [false, "try again"],
+// ]);
+// console.log(question);
+
+// console.log(question.get("question"));
+// for (const [key, value] of question) {
+//   if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+// }
+// const answer = 3;
+// // 3 = 3 which is true, true = Correct
+// console.log(question.get(question.get("correct") === answer));
+
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+///////////////////////////////////////////////////////////////////////////
+//CODING CHALLANGE 3
+
+// const gameEvents = new Map([
+//   [17, "⚽ GOAL"],
+//   [36, "🔁 Substitution"],
+//   [47, "⚽ GOAL"],
+//   [61, "🔁 Substitution"],
+//   [64, "🔶 Yellow card"],
+//   [69, "🔴 Red card"],
+//   [70, "🔁 Substitution"],
+//   [72, "🔁 Substitution"],
+//   [76, "⚽ GOAL"],
+//   [80, "⚽ GOAL"],
+//   [92, "🔶 Yellow card"],
+// ]);
+
+// //1
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// //2
+// gameEvents.delete(64);
+// console.log(gameEvents);
+
+// //3
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(`An event happened, on
+// average, every ${time / gameEvents.size} minutes`);
+
+// //4
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? "FIRST" : "SECOND";
+//   console.log(`[${half}HALF] ${min}: ${event}`);
+// }
+
+///////////////////////////////////////////////////////////////////////////
