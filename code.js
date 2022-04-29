@@ -34,9 +34,9 @@ const user = {
 // if (bodyMassIndex >= 18.5 && bodyMassIndex <= 25) {
 //   console.log("Vase vaha je v poradku");
 // } else if (bodyMassIndex > 25) {
-//   console.log("Jste tloustik a meli byste se nad sebou zamyslet");
+//   console.log("Jste tlusty");
 // } else {
-//   console.log("Jste podvyziveny a bezte na Mekac");
+//   console.log("Jste podvyziveny");
 // }
 // console.log(`Vase BMI je ${bodyMassIndex}`);
 
@@ -177,3 +177,126 @@ if (binary) {
 // }
 
 ///////////////////////////////////////////////////////////////////////////
+//working with STRINGS
+// const airline = "TAP Air Portugal";
+// const plane = "A320";
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log("B737"[0]);
+
+// console.log(airline.length);
+// console.log(airline.indexOf("r"));
+// console.log(airline.lastIndexOf("r"));
+// console.log(airline.indexOf("Portugal"));
+
+// console.log(airline.slice(airline.indexOf("Air")));
+// console.log(airline.slice(4, 7));
+// console.log(airline.slice(0, airline.indexOf(" ")));
+// console.log(airline.slice(airline.lastIndexOf(" ") + 1));
+// console.log(airline.slice(-2));
+
+// const checkMiddleSeat = function (seat) {
+//   //B a E are middle seats
+//   const s = seat.slice(-1);
+//   if (s === "B" || s === "E") console.log("You got the middle seat");
+//   else console.log("You got lucky");
+// };
+// checkMiddleSeat("11B");
+// checkMiddleSeat("23C");
+// checkMiddleSeat("3E");
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+// const passagner = "jOsEf";
+// const passangerLower = passagner.toLowerCase();
+// const passangerCorrect =
+//   passangerLower[0].toUpperCase() + passangerLower.slice(1);
+// console.log(passangerCorrect);
+
+// // comparing mail
+// const email = "hello@seznam.cz";
+// const loginEmail = "    Hello@Seznam.cZ \n";
+
+// // const lowerEmail = loginEmail.toLowerCase();
+// // const trimmedEmail = lowerEmail.trim();
+// // console.log(trimmedEmail);
+
+// const normalizeEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizeEmail);
+// console.log(email === normalizeEmail);
+
+// //replacing
+// const priceGB = "288,97£";
+// const priceUS = priceGB.replace("£", "$").replace(",", ".");
+// console.log(priceUS);
+
+// const annoucement = "All passanger come to boarding door 23. Boarding door 23";
+// console.log(annoucement.replace("door", "gate"));
+// console.log(annoucement.replaceAll("door", "gate"));
+
+// console.log(annoucement.replace(/door/g, "gate")); // g = global replace
+
+// //Booleans
+// const planeOne = "Airbus A320neo";
+// console.log(planeOne.includes("A320")); //true
+// console.log(planeOne.includes("Boeing")); //false
+// console.log(planeOne.startsWith("Air")); //true
+
+// if (planeOne.startsWith("Airbus") && planeOne.endsWith("neo")) {
+//   console.log("Part of new airbus family");
+// }
+
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase(); // lowercose beacause Knife with upper K
+//   if (baggage.includes("knife") || baggage.includes("gun")) {
+//     console.log("You are not allowed on board");
+//   } else {
+//     console.log("Welcome on aboard");
+//   }
+// };
+// checkBaggage("I have a laptop, some Food and pocket Knife");
+// checkBaggage("Socks and camera");
+// checkBaggage("Got some snacks and gun for protection");
+
+console.log("a+very+nice+string".split("+"));
+console.log("Josef Rozumberk".split(" "));
+const [firstName, lastName] = "Josef Rozumberk".split(" ");
+
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(" ");
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1)); // first word to upper case + the rest
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // replace first word to first word upperCase
+  }
+  console.log(namesUpper.join(" "));
+};
+
+capitalizeName("jessica ann smith davis");
+capitalizeName("josef darius");
+
+// padding
+const message = "Go to gate 23";
+console.log(message.padStart(25, "+").padEnd(30, "+"));
+console.log(message.padStart(25, "+"));
+
+const maskCreditCard = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+
+console.log(maskCreditCard(43771565132851));
+console.log(maskCreditCard("6545613241864651"));
+
+//repeat
+
+const message2 = "Hola hola hola....";
+console.log(message2.repeat(5));
